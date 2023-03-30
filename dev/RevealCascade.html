@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>&lt;my-element> Demo</title>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/lit/polyfill-support.js"></script>
+    <script
+      type="module"
+      src="../build/reveal-cascade/reveal-cascade.js"
+    ></script>
+    <style>
+      :root {
+        background-color: #f4f4f4;
+        font-family: Arial;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      reveal-cascade .rem5 {
+        height: 5rem;
+      }
+
+      reveal-cascade .centered {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      reveal-cascade .bottom {
+        justify-content: flex-end;
+      }
+
+      reveal-cascade .image-container {
+        height: 200px; /* Set the fixed height for the container */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Hide any overflowing content */
+      }
+
+      reveal-cascade .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; /* Adjust the image size within the container */
+      }
+
+      reveal-cascade {
+        --visible-content-background: pink;
+        --reveal-controls-background: white;
+        --revealable-content-background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <reveal-cascade enablePositioning>
+      <div slot="visible-content">
+        <!-- Visible Content -->
+        <div class="image-container rem5 centered">
+          <img
+            src="https://img.freepik.com/premium-vector/programmer-with-code-cat-book-coffee-vector-clip-art-illustration_138676-92.jpg?w=1800"
+            alt="Your Image"
+          />
+        </div>
+        <main>
+          <div class="centered">
+            <h1>My Treatment</h1>
+          </div>
+          <div class="centered">
+            <h2>Welcome to My Treatment</h2>
+          </div>
+          <div class="centered">
+            <input />
+          </div>
+          <div class="centered">
+            <button>CONTINUE</button>
+          </div>
+
+          <div class="centered">
+            <p>Where can I find my Code?</p>
+          </div>
+          <div class="centered">
+            <p>
+              You receive a code from your place of treatment. You either
+              receive a code on a code card or digitally (eg. by mail).
+            </p>
+          </div>
+        </main>
+      </div>
+      <div slot="reveal-button">
+        <p class="centered">Read more about My Treatment</p>
+        <span class="centered">V</span>
+      </div>
+      <div slot="revealable-content">
+        <!-- Revealable Content -->
+        <div class="rem5 centered">bbb</div>
+        <div class="rem5 centered">bbb</div>
+      </div>
+    </reveal-cascade>
+  </body>
+</html>
