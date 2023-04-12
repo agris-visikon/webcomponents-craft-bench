@@ -61,15 +61,20 @@ export class SimpleCarousel extends LitElement {
     };
     return html`
     <slide-button
-    @click=${this.navigateToPrevSlide}>
-    ${BOOTSTRAP_CHEVRON_LEFT}
+      exportparts="internal-btn: buttons"
+      part="buttons left-button"  
+      @click=${this.navigateToPrevSlide}
+      >
+      ${BOOTSTRAP_CHEVRON_LEFT}
     </slide-button>
-    <div id="container"
-    style="${styleMap(containerStyles)}">
+    <div part="container" id="container" style="${styleMap(containerStyles)}">
     <slot></slot>
     </div>
     <slide-button
-      @click=${this.navigateToNextSlide}>
+      exportparts="internal-btn: buttons"
+      part="buttons right-button"  
+      @click=${this.navigateToNextSlide}
+    >
       ${BOOTSTRAP_CHEVRON_RIGHT}
     </slide-button>
     `;

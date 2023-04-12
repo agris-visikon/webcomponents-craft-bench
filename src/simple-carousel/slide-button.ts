@@ -38,6 +38,7 @@ export class SlideButton extends LitElement {
   override render() {
     return html`
     <div
+      part="internal-btn"
       id="btn"
       tabindex="0"
       role="button"
