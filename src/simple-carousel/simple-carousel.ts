@@ -44,8 +44,9 @@ export class SimpleCarousel extends LitElement {
       padding: 1em;
       overflow: hidden;
       position: relative;
-      box-shadow: var(--shadow, gray) 0.2em 0.2em 0.4em,
-                  var(--highlight, white) -0.1em -0.1em 0.2em;
+      box-shadow: var(--carousel-box-shadow, 
+        #293198 0.2em 0.2em 0.4em, 
+        #ceffff -0.1em -0.1em 0.2em);
     }
   `;
   @state() private containerHeight = 0;
